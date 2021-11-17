@@ -33,25 +33,5 @@ fi
 poetry run jsng 'j.core.config.set("tftshop_mpk", os.environ.get("mpk"))'
 poetry run jsng "wallet=j.clients.stellar.get(\"tftshop_wallet\"); wallet.secret=\"$tftshop_wallet_secret\"; wallet.network=\"$stellar_network\"; wallet.save()"
 
-# Configure restic client for backup
-echo "checking env variables for backup was set correctly "
-disable_backup=0
-for var in repo_url backup_password AWS_ACCESS_KEY_ID AWS_ACCESS_KEY_ID
-    do
-        if [ -z "${!var}" ]
-        then
-            echo "Backup won't be working because $var not set, Please set it in creating your container"
-            disable_backup=1
-        fi
-    done
-
-if [ $disable_backup == 0 ]; then
-    poetry run jsng "j.tools.restic.get(\"systembackupclient\", repo=\"$repo_url\", password=\"$backup_password\", extra_env={\"AWS_ACCESS_KEY_ID\": \"$AWS_ACCESS_KEY_ID\", \"AWS_SECRET_ACCESS_KEY\": \"$AWS_ACCESS_KEY_ID\"})"
-fi
-
-# Set email server config
-poetry run jsng "email_server_config = {\"host\": "$email_host", \"port\": "$email_port", \"username\": "$email_username", \"password\": "$email_password"}; j.core.config.set(\"EMAIL_SERVER_CONFIG\", email_server_config)"
-
-
 # Start threebot server without certificate as kubernetes manages it
 poetry run threebot start --no-cert

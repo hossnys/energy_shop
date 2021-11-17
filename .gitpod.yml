@@ -5,7 +5,7 @@ tasks:
       command: |
         sudo -s && sudo poetry run threebot start --no-cert --background
 ports:
-  - port: 443
+  - port: 23000
     onOpen: open-browser
   - port: 80
     onOpen: open-browser

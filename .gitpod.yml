@@ -1,9 +1,5 @@
 image:
   file: .gitpod.Dockerfile
-tasks:
-    - name: shop
-      command: |
-        poetry run threebot start --no-cert
 ports:
   - port: 443
     onOpen: open-browser

@@ -1,7 +1,9 @@
 FROM gitpod/workspace-full
 
 LABEL maintainer="rob@threefold.tech"
+
 USER root
+
 # Update Ubuntu
 RUN apt-get update
 RUN apt install sudo -y
@@ -30,6 +32,12 @@ RUN mkdir -p /code/tftshop/jumpscale/packages/gettft && touch /code/tftshop/jump
 WORKDIR /code/tftshop
 COPY pyproject.toml /code/tftshop/
 COPY poetry.lock /code/tftshop/
+RUN chown -R gitpod:gitpod /code
+RUN chown -R gitpod:gitpod /data
+RUN chown -R gitpod:gitpod /home/gitpod
+RUN sudo adduser gitpod sudo
+USER gitpod
+
 RUN poetry install
 
 # Copy code

@@ -4,7 +4,8 @@ tasks:
     - name: shop
       command: |
         sudo -s
-        sudo poetry install && poetry shell && sudo ./entrypoint.sh
+        sudo poetry install
+        sudo poetry shell && sudo ./entrypoint.sh
 ports:
   - port: 443
     onOpen: open-browser

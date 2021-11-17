@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 LABEL maintainer="rob@threefold.tech"
-
+USER root
 # Update Ubuntu
 RUN apt-get update
 ARG DEBIAN_FRONTEND=noninteractive
@@ -30,7 +30,6 @@ RUN poetry install
 
 # Copy code
 COPY . /code/tftshop
-USER root
 
 ENTRYPOINT  ./entrypoint.sh
 RUN poetry run threebot start --no-cert

@@ -1,9 +1,9 @@
 image:
   file: .gitpod.Dockerfile
-  tasks:
-    - name: tft-shop  
-      command: |
-        poetry run threebot start --no-cert
+tasks:
+  - name: tft-shop  
+    command: |
+       poetry run threebot start --no-cert
 ports:
   - port: 443
     onOpen: open-browser

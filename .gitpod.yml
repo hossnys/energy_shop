@@ -7,5 +7,3 @@ tasks:
 ports:
   - port: 23000
     onOpen: open-browser
-  - port: 80
-    onOpen: open-browser

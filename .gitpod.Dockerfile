@@ -1,9 +1,10 @@
-FROM ubuntu:20.04
+FROM gitpod/workspace-full
 
 LABEL maintainer="rob@threefold.tech"
 USER root
 # Update Ubuntu
 RUN apt-get update
+RUN apt install sudo -y
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Amsterdam
 RUN apt-get install -y tzdata

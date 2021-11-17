@@ -32,4 +32,4 @@ RUN poetry install
 COPY . /code/tftshop
 USER root
 
-RUN bash  ./entrypoint.sh
+ENTRYPOINT  ./entrypoint.sh

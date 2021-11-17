@@ -31,5 +31,5 @@ RUN poetry install
 # Copy code
 COPY . /code/tftshop
 
-ENTRYPOINT  ./entrypoint.sh
+CMD  ./entrypoint.sh
 

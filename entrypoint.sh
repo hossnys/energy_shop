@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create dirs for electrum and jsmodel if not created, create links for them in the volume
-mkdir -p /root/.config/jumpscale/secureconfig/jumpscale/packages
+mkdir -p ~/.config/jumpscale/secureconfig/jumpscale/packages
 mkdir -p /data/jsngmodel && ln -s /data/jsngmodel ~/.config/jumpscale/secureconfig/jumpscale/packages/gettft
 mkdir -p /data/electrum && ln -s /data/electrum ~/.electrum
 
@@ -35,4 +35,3 @@ poetry run jsng "wallet=j.clients.stellar.get(\"tftshop_wallet\"); wallet.secret
 
 # Start threebot server without certificate as kubernetes manages it
 poetry run threebot start --no-cert --background
-

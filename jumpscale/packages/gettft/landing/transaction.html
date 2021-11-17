@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TFT Transaction</title>
+    <link rel="icon" href="./images/logo.png" type="image/x-icon" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <script>
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = "1a5a5241-91cb-4a41-8323-5ba5ec574da0";
+      (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
+
+    <!-- Matomo Tag Manager -->
+    <script type="text/javascript">
+      var _mtm = (window._mtm = window._mtm || []);
+      _mtm.push({ "mtm.startTime": new Date().getTime(), event: "mtm.Start" });
+      var d = document,
+        g = d.createElement("script"),
+        s = d.getElementsByTagName("script")[0];
+      g.type = "text/javascript";
+      g.async = true;
+      g.src = "https://analytics.threefold.io/js/container_Ldf5DhVh.js";
+      s.parentNode.insertBefore(g, s);
+    </script>
+    <!-- End Matomo Tag Manager -->
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = (window._paq = window._paq || []);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function () {
+        var u = "//analytics.threefold.io/";
+        _paq.push(["setTrackerUrl", u + "matomo.php"]);
+        _paq.push(["setSiteId", "11"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.type = "text/javascript";
+        g.async = true;
+        g.src = u + "matomo.js";
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body style="background-color: #333">
+    <!-- Start Container -->
+    <div class="container-fluid">
+      <!-- Start navbar -->
+      <nav class="bg-white fixed inset-0 h-24 z-50 shadow">
+        <div class="mx-auto px-4 sm:px-6 lg:px-4">
+          <div class="flex justify-between h-24 px-8">
+            <div class="flex">
+              <div class="flex-shrink-0 flex items-center lg:mr-10">
+                <img
+                  class="block lg:hidden"
+                  src="./images/get_tft_logo.png"
+                  alt="Get TFT logo"
+                />
+                <img
+                  class="hidden lg:block"
+                  src="./images/get_tft_logo.png"
+                  alt="Get TFT logo"
+                />
+              </div>
+              <div class="hidden sm:ml-6 sm:flex">
+                <a
+                  href="index.html#home"
+                  class="
+                    inline-flex
+                    items-center
+                    uppercase
+                    px-4
+                    pt-1
+                    border-b-2 border-indigo-500
+                    text-md
+                    font-medium
+                    leading-5
+                    text-gray-900
+                    focus:outline-none focus:border-indigo-700
+                    transition
+                    duration-150
+                    ease-in-out
+                  "
+                >
+                  Home
+                </a>
+                <a
+                  href="index.html#tftvalue"
+                  class="
+                    ml-4
+                    inline-flex
+                    items-center
+                    uppercase
+                    px-4
+                    pt-1
+                    border-b-2 border-transparent
+                    text-md
+                    font-medium
+                    leading-5
+                    text-gray-500
+                    hover:text-gray-700 hover:border-gray-300
+                    focus:outline-none focus:text-gray-700 focus:border-gray-300
+                    transition
+                    duration-150
+                    ease-in-out
+                  "
+                >
+                  TFT Value
+                </a>
+                <a
+                  href="index.html#grid"
+                  class="
+                    ml-4
+                    inline-flex
+                    items-center
+                    uppercase
+                    px-4
+                    pt-1
+                    border-b-2 border-transparent
+                    text-md
+                    font-medium
+                    leading-5
+                    tegetxt-gray-500
+                    hover:text-gray-700 hover:border-gray-300
+                    focus:outline-none focus:text-gray-700 focus:border-gray-300
+                    transition
+                    duration-150
+                    ease-in-out
+                  "
+                >
+                  The Grid
+                </a>
+                <a
+                  href="index.html#comparison"
+                  class="
+                    ml-4
+                    inline-flex
+                    items-center
+                    uppercase
+                    px-4
+                    pt-1
+                    border-b-2 border-transparent
+                    text-md
+                    font-medium
+                    leading-5
+                    text-gray-500
+                    hover:text-gray-700 hover:border-gray-300
+                    focus:outline-none focus:text-gray-700 focus:border-gray-300
+                    transition
+                    duration-150
+                    ease-in-out
+                  "
+                >
+                  Why Threefold
+                </a>
+                <a
+                  href="index.html#how-it-works"
+                  class="
+                    ml-4
+                    inline-flex
+                    items-center
+                    uppercase
+                    px-4
+                    pt-1
+                    border-b-2 border-transparent
+                    text-md
+                    font-medium
+                    leading-5
+                    text-gray-500
+                    hover:text-gray-700 hover:border-gray-300
+                    focus:outline-none focus:text-gray-700 focus:border-gray-300
+                    transition
+                    duration-150
+                    ease-in-out
+                  "
+                >
+                  How It Works
+                </a>
+                <a
+                  href="/gettft/shop/"
+                  target="_blank"
+                  class="
+                    ml-4
+                    inline-flex
+                    items-center
+                    uppercase
+                    px-4
+                    pt-1
+                    border-b-2 border-transparent
+                    text-md
+                    font-medium
+                    leading-5
+                    text-gray-500
+                    hover:text-gray-700 hover:border-gray-300
+                    focus:outline-none focus:text-gray-700 focus:border-gray-300
+                    transition
+                    duration-150
+                    ease-in-out
+                  "
+                >
+                  Get TFT
+                </a>
+              </div>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+              <img class="mx-2" src="./images/tft_price.png" />
+              <h2 class="lg:text-md">1 TFT</h2>
+              <h3 class="lg:text-md mx-1" id="tft-price">Loading...</h3>
+              <h3 class="lg:text-md">USD</h3>
+            </div>
+            <div class="-mr-2 flex items-center sm:hidden">
+              <!-- Mobile menu button -->
+              <button
+                class="
+                  mobile-menu-button
+                  inline-flex
+                  items-center
+                  justify-center
+                  p-2
+                  rounded-md
+                  text-gray-400
+                  hover:text-gray-500 hover:bg-gray-100
+                  focus:outline-none focus:bg-gray-100 focus:text-gray-500
+                  transition
+                  duration-150
+                  ease-in-out
+                "
+                aria-label="Main menu"
+                aria-expanded="false"
+              >
+                <!-- Icon when menu is closed. -->
+                <!--
+              Heroicon name: menu
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+                <svg
+                  class="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+                <!-- Icon when menu is open. -->
+                <!--
+              Heroicon name: x
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+                <svg
+                  class="hidden h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!--
+      Mobile menu, toggle classes based on menu state.
+  
+      Menu open: "block", Menu closed: "hidden"
+    -->
+        <div class="hidden mobile-menu sm:hidden bg-white">
+          <div class="pt-2 pb-3">
+            <a
+              href="index.html#home"
+              class="
+                block
+                pl-3
+                pr-4
+                py-2
+                uppercase
+                border-l-4 border-indigo-500
+                text-base
+                font-medium
+                text-indigo-700
+                bg-indigo-50
+                focus:outline-none
+                focus:text-indigo-800
+                focus:bg-indigo-100
+                focus:border-indigo-700
+                transition
+                duration-150
+                ease-in-out
+              "
+              >Home</a
+            >
+            <a
+              href="index.html#tftvalue"
+              class="
+                mt-1
+                block
+                pl-3
+                pr-4
+                py-2
+                uppercase
+                border-l-4 border-transparent
+                text-base
+                font-medium
+                text-gray-600
+                hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300
+                focus:outline-none
+                focus:text-gray-800
+                focus:bg-gray-50
+                focus:border-gray-300
+                transition
+                duration-150
+                ease-in-out
+              "
+              >TFT Value</a
+            >
+            <a
+              href="index.html#grid"
+              class="
+                mt-1
+                block
+                pl-3
+                pr-4
+                py-2
+                uppercase
+                border-l-4 border-transparent
+                text-base
+                font-medium
+                text-gray-600
+                hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300
+                focus:outline-none
+                focus:text-gray-800
+                focus:bg-gray-50
+                focus:border-gray-300
+                transition
+                duration-150
+                ease-in-out
+              "
+              >The Grid</a
+            >
+            <a
+              href="index.html#comparison"
+              class="
+                mt-1
+                block
+                pl-3
+                pr-4
+                py-2
+                uppercase
+                border-l-4 border-transparent
+                text-base
+                font-medium
+                text-gray-600
+                hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300
+                focus:outline-none
+                focus:text-gray-800
+                focus:bg-gray-50
+                focus:border-gray-300
+                transition
+                duration-150
+                ease-in-out
+              "
+              >Why Threefold</a
+            >
+            <a
+              href="index.html#how-it-works"
+              class="
+                mt-1
+                block
+                pl-3
+                pr-4
+                py-2
+                uppercase
+                border-l-4 border-transparent
+                text-base
+                font-medium
+                text-gray-600
+                hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300
+                focus:outline-none
+                focus:text-gray-800
+                focus:bg-gray-50
+                focus:border-gray-300
+                transition
+                duration-150
+                ease-in-out
+              "
+              >How it works</a
+            >
+            <a
+              href="/gettft/shop/"
+              target="_blank"
+              class="
+                mt-1
+                block
+                pl-3
+                pr-4
+                py-2
+                uppercase
+                border-l-4 border-transparent
+                text-base
+                font-medium
+                text-gray-600
+                hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300
+                focus:outline-none
+                focus:text-gray-800
+                focus:bg-gray-50
+                focus:border-gray-300
+                transition
+                duration-150
+                ease-in-out
+              "
+              >Get TFT</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- End navbar -->
+
+      <!-- Start transaction -->
+      <section class="lg:my-10 py-16 text-white">
+        <div class="mx-auto px-4 lg:max-w-screen-2xl sm:px-6 lg:px-8">
+          <div class="space-y-12">
+            <div
+              class="
+                space-y-5
+                text-center
+                sm:space-y-4
+                md:max-w-xl
+                lg:max-w-3xl
+                xl:max-w-none
+              "
+            >
+              <div class="my-10 pb-8">
+                <h2 class="lg:text-6xl text-4xl pt-10 font-normal text-white">
+                  ALL TRANSACTIONS USE
+                  <br />
+                  <span class="font-bold text-white">ONE TOKEN: TFT.</span>
+                </h2>
+                <p class="text-xl font-normal"></p>
+              </div>
+              <h3 class="text-2xl font-normal text-white">PROOF OF CAPACITY</h3>
+              <h2 class="text-4xl font-normal text-white">
+                The Farming Process
+              </h2>
+            </div>
+            <div
+              class="
+                space-y-12
+                sm:grid sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12 sm:space-y-0
+                lg:grid-cols-3 lg:gap-x-8
+              "
+            >
+              <div class="space-y-4 p-5">
+                <div class="relative">
+                  <img class="mx-auto mb-8" src="./images/person.png" alt="" />
+                </div>
+
+                <div class="space-y-2">
+                  <div class="text-center leading-6 space-y-1">
+                    <!-- <h4 class="text-xl font-normal uppercase">
+                  
+                </h4> -->
+                    <div
+                      class="
+                        text-white text-xl
+                        leading-tight
+                        tft_subtitle
+                        tracking-wide
+                      "
+                    >
+                      A TFT is created every time someone adds capacity to the
+                      ThreeFold Grid. This is rewarded to the person adding the
+                      capacity.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4 p-5">
+                <div class="relative">
+                  <img
+                    class="mx-auto mb-8 items-center"
+                    src="./images/farming1.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <div class="text-center leading-6 space-y-1">
+                    <!-- <h4 class="text-xl font-normal uppercase">
+                  
+                </h4> -->
+                    <!-- <div class="text-white text-2xl leading-tight tft_subtitle tracking-wide">
+                  People earn TFT for achieving a certain uptime and as proof of capacity.We call that 'Farming'.
+                </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4 p-5">
+                <div class="relative">
+                  <img
+                    class="mx-auto mb-8"
+                    src="./images/tft_icon.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <div class="text-center leading-6 space-y-1">
+                    <!-- <h4 class="text-xl font-normal uppercase">
+                  
+                </h4> -->
+                    <div
+                      class="
+                        text-white text-xl
+                        leading-tight
+                        tft_subtitle
+                        tracking-wide
+                      "
+                    >
+                      People earn TFT for achieving a certain uptime and as
+                      proof of capacity.We call that 'Farming'.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-12 pt-20">
+            <div
+              class="
+                space-y-5
+                text-center
+                sm:space-y-4
+                md:max-w-xl
+                lg:max-w-3xl
+                xl:max-w-none
+              "
+            >
+              <h3 class="text-2xl font-normal text-white">
+                PROOF OF UTILIZATION
+              </h3>
+              <h2 class="text-4xl font-normal text-white">
+                The Cultivation Process
+              </h2>
+            </div>
+            <div
+              class="
+                space-y-12
+                sm:grid sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12 sm:space-y-0
+                lg:grid-cols-3 lg:gap-x-8
+              "
+            >
+              <div class="space-y-4 p-5">
+                <div class="relative">
+                  <img
+                    class="mx-auto mb-8"
+                    src="./images/tft_icon.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <div class="text-center leading-6 space-y-1">
+                    <!-- <h4 class="text-xl font-normal uppercase">
+                  
+                </h4> -->
+                    <div
+                      class="
+                        text-white text-xl
+                        leading-tight
+                        tft_subtitle
+                        tracking-wide
+                      "
+                    >
+                      Users and organizations pay cultivation fees (using TFT)
+                      for using compute, storage and network capacity.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4 p-5">
+                <div class="relative">
+                  <img
+                    class="mx-auto mb-8 items-center"
+                    src="./images/farming1.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <div class="text-center leading-6 space-y-1">
+                    <!-- <h4 class="text-xl font-normal uppercase">
+                  
+                </h4> -->
+                    <!-- <div class="text-white text-2xl leading-tight tft_subtitle tracking-wide">
+                  People earn TFT for achieving a certain uptime and as proof of capacity.We call that 'Farming'.
+                </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4 p-5">
+                <div class="relative">
+                  <img class="mx-auto mb-8" src="./images/develop.png" alt="" />
+                </div>
+
+                <div class="space-y-2">
+                  <div class="text-center leading-6 space-y-1">
+                    <!-- <h4 class="text-xl font-normal uppercase">
+                  
+                </h4> -->
+                    <div
+                      class="
+                        text-white text-xl
+                        leading-tight
+                        tft_subtitle
+                        tracking-wide
+                      "
+                    >
+                      They then get to develop, create, deploy or host on the
+                      ThreeFold Grid.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End transaction -->
+
+      <!-- Start footer -->
+      <footer class="footer">
+        <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
+          <div class="lg:text-2xl text-base leading-6 text-white text-center">
+            <a
+              href="https://library.threefold.me/info/legal/#/legal__terms_conditions_gettft"
+              target="_blank"
+            >
+              Terms of Service
+            </a>
+            <!-- <a href="#">Privacy</a> -->
+            <p class="text-center font-light mx-auto">© ThreeFold 2021</p>
+          </div>
+        </div>
+      </footer>
+      <!-- End footer -->
+    </div>
+    <!-- End Container -->
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

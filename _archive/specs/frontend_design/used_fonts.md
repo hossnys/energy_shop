@@ -1,0 +1,3 @@
+- Lorem ipsum copy: Nunito Sans Semibold
+- Button Titles : Open Sans Semibold
+- Buttons : Open Sans

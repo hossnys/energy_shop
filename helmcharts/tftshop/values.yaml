@@ -1,0 +1,96 @@
+# Default values for tftshop.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: tftshop
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+btcmpk: "yourmpk"
+# btc and stellar network
+network: "testnet"
+stellar_wallet_secret: "stellar wallet secret"
+backup:
+  enabled: false
+  repo_url: "s3 bucket repo url"
+  backup_password: "s3 backup password"
+  AWS_ACCESS_KEY_ID: "AWS_ACCESS_KEY_ID"
+  AWS_SECRET_ACCESS_KEY: "AWS_SECRET_ACCESS_KEY"
+
+# email configurations
+email:
+  enabled: false
+  email_host: "smtp.gmail.com"
+  email_port: "587"
+  email_username: "test@gmail.com"
+  email_password: "password"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+  {}
+  # fsGroup: 2000
+
+securityContext:
+  {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 443
+
+ingress:
+  enabled: true
+  annotations:
+    {}
+    #kubernetes.io/ingress.class: nginx
+    #cert-manager.io/issuer: "letsencrypt-prod"
+    #nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+  host: my-host.com
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+  limits:
+    cpu: 1000m
+    memory: 1024Mi
+  requests:
+    cpu: 900m
+    memory: 1000Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+data:
+  pvc: ""

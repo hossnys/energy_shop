@@ -1,0 +1,48 @@
+name = "gettft"
+is_auth = true
+is_admin = false
+
+[[static_dirs]]
+name = "landingpage"
+path_url = ""
+path_location = "landing"
+index = "index.html"
+is_auth = false
+
+[[static_dirs]]
+name = "frontend"
+path_url = "/shop"
+path_location = "frontend"
+index = "index.html"
+spa = true
+
+[[bottle_servers]]
+name = "main"
+file_path = "bottle/shop.py"
+path_url = "/api/"
+path_dest = "/api/"
+host = "0.0.0.0"
+
+[[bottle_servers]]
+name = "prices"
+file_path = "bottle/datetime.py"
+path_url = "/prices/date/"
+path_dest = "/prices/date/"
+host = "0.0.0.0"
+is_admin = false
+is_auth = false
+
+[[servers]]
+name = "gettft_proxy"
+letsencryptemail = "email@incubaid.com"
+domain = "gettft.grid.tf"
+includes = ["default_443.chatflows_*", "default_443.auth_*", "default_443.gettft*"]
+
+[[servers.locations]]
+name = "custom"
+type = "custom"
+custom_config = """
+location / {
+   rewrite ^(.+) /gettft;
+}
+"""

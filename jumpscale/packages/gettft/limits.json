@@ -1,0 +1,4 @@
+{
+    "limit_per_time": "1000",
+    "limit_per_day": "2000"
+}

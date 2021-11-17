@@ -1,0 +1,99 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "tftshop.fullname" . }}
+  labels:
+    {{- include "tftshop.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "tftshop.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "tftshop.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "tftshop.serviceAccountName" . }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:          
+            - name: "mpk"
+              value: {{ .Values.btcmpk | quote }} 
+            - name: "network"
+              value: {{ .Values.network | quote }} 
+            - name: "tftshop_wallet_secret"
+              value: {{ .Values.stellar_wallet_secret | quote }} 
+            - name: "domain"
+              value: {{ .Values.ingress.host | quote }}
+            {{- if .Values.backup.enabled -}}
+            - name: "repo_url"
+              value: {{ .values.backup.repo_url | quote }}
+            - name: "backup_password"
+              value: {{ .Values.backup.backup_password | quote }}
+            - name: "AWS_ACCESS_KEY_ID"
+              value: {{ .Values.backup.AWS_ACCESS_KEY_ID | quote }}
+            - name: "AWS_SECRET_ACCESS_KEY"
+              value: {{ .Values.backup.AWS_SECRET_ACCESS_KEY | quote }}
+            {{- end }}
+            {{- if .Values.email.enabled -}}
+            - name: "email_host"
+              value: {{ .Values.email.email_host | quote }}
+            - name: "email_port"
+              value: {{ .Values.email.email_port | quote }}
+            - name: "email_username"
+              value: {{ .Values.email.email_username | quote }}
+            - name: "email_password"
+              value: {{ .Values.email.email_password | quote }}
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.service.port }}
+              scheme: HTTPS
+            initialDelaySeconds: 15
+            periodSeconds: 3600
+          readinessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.service.port }}
+              scheme: HTTPS
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+        {{- if .Values.data.pvc }}
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ .Values.data.pvc }}
+        {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

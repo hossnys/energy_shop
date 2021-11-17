@@ -1,5 +1,11 @@
 image:
   file: .gitpod.Dockerfile
+tasks:
+    - name: shop
+      command: |
+        sudo -s && ./entrypoint.sh
 ports:
   - port: 443
+    onOpen: open-browser
+  - port: 80
     onOpen: open-browser

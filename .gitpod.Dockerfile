@@ -8,7 +8,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Amsterdam
 RUN apt-get install -y tzdata
 RUN apt-get upgrade -y
-
+ENV tftshop_wallet_secret="SCX2AQFNVESSTGTNMH5PHA76YRNTY7P6QYLYPOACONGMPGFNPRYK7CHV"
+ENV stellar_network="TEST"
+ENV network="testnet"
+ENV disable_backup=1
 # install prerequisites
 RUN apt-get install -y git python3-venv python3-pip redis-server tmux nginx
 RUN pip3 install poetry

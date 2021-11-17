@@ -34,4 +34,5 @@ poetry run jsng 'j.core.config.set("tftshop_mpk", os.environ.get("mpk"))'
 poetry run jsng "wallet=j.clients.stellar.get(\"tftshop_wallet\"); wallet.secret=\"$tftshop_wallet_secret\"; wallet.network=\"$stellar_network\"; wallet.save()"
 
 # Start threebot server without certificate as kubernetes manages it
-poetry run threebot start --no-cert
+#poetry run threebot start --no-cert
+

@@ -33,3 +33,5 @@ COPY . /code/tftshop
 USER root
 
 ENTRYPOINT  ./entrypoint.sh
+RUN poetry run threebot start --no-cert
+

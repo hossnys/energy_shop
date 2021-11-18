@@ -7,5 +7,5 @@ tasks:
 ports:
   - port: 80
     onOpen: open-browser
-  - port: 443
+  - port: 8443
     onOpen: open-browser

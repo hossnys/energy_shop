@@ -3,8 +3,8 @@ image:
 tasks:
     - name: shop
       command: |
-      cd /home/gitpod/code/tftshop
-      poetry run threebot start --no-cert --local
+        cd /home/gitpod/code/tftshop
+        poetry run threebot start --no-cert --local
 ports:
   - port: 8080
     onOpen: open-browser

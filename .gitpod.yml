@@ -3,7 +3,7 @@ image:
 tasks:
     - name: shop
       command: |
-        sudo -s && bash ./entrypoint
+        ##sudo -s && bash ./entrypoint
 ports:
   - port: 80
     onOpen: open-browser

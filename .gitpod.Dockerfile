@@ -29,10 +29,10 @@ RUN pip3 install Electrum-4.1.5.tar.gz
 # install js-sdk dependancies
 RUN mkdir -p ~/code/tftshop/jumpscale/packages/gettft && touch ~/code/tftshop/jumpscale/packages/gettft/__init__.py
 WORKDIR ~/code/tftshop
-COPY pyproject.toml ~/code/tftshop/
-COPY poetry.lock ~/code/tftshop/
+COPY pyproject.toml code/tftshop/
+COPY poetry.lock code/tftshop/
 RUN poetry install
 
 # Copy code
-COPY . ~/code/tftshop
+COPY . code/tftshop
 RUN ./entrypoint.sh

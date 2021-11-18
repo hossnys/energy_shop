@@ -5,9 +5,9 @@ tasks:
       command: |
         cd /home/gitpod/code/tftshop
         electrum daemon -d --testnet
-        poetry run threebot start --no-cert --local
+        poetry run threebot start --no-cert
 ports:
-  - port: 8080
+  - port: 80
     onOpen: open-browser
-  - port: 8443
+  - port: 443
     onOpen: open-browser

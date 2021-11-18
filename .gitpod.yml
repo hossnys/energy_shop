@@ -2,7 +2,9 @@ image:
   file: .gitpod.Dockerfile
 tasks:
     - name: shop
-      command: poetry run threebot start --no-cert --local
+      command: |
+      cd /home/gitpod/code/tftshop
+      poetry run threebot start --no-cert --local
 ports:
   - port: 8080
     onOpen: open-browser

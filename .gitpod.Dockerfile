@@ -21,7 +21,6 @@ ENV mpk="vpub5VDwtZH8SbRBPRV4c2LNrhDzyaLV7KB4udk55tfDfNkL5mjbEehZRCwte2ydSgVTsq1
 RUN apt-get install -y git python3-venv python3-pip redis-server tmux nginx
 RUN apt-get install -y python3-pyqt5 libsecp256k1-0 python3-cryptography curl && \
     curl https://download.electrum.org/4.1.5/Electrum-4.1.5.tar.gz -o Electrum-4.1.5.tar.gz  
-    
 RUN setcap cap_net_bind_service=+ep `which nginx`
 
 USER gitpod

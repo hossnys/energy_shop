@@ -4,11 +4,10 @@ tasks:
     - name: shop
       command: |
         cd /home/gitpod/code/tftshop
-        sudo setcap cap_net_bind_service=+ep `which nginx`
         electrum daemon -d --testnet
-        poetry run threebot start --no-cert
+        poetry run threebot start --local --no-cert
 ports:
-  - port: 80
+  - port: 8080
     onOpen: open-browser
-  - port: 443
+  - port: 8443
     onOpen: open-browser

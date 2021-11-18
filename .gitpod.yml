@@ -5,6 +5,7 @@ tasks:
       command: |
         sudo -s
         poetry shell
+        bash ./entrypoint
         poetry run threebot start --no-cert --background
 ports:
   - port: 80

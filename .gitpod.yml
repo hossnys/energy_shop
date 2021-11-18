@@ -3,7 +3,9 @@ image:
 tasks:
     - name: shop
       command: |
-        sudo -s && sudo ./entrypoint.sh
+        sudo -s
+        poetry shell
+        poetry run threebot start --no-cert --background
 ports:
   - port: 80
     onOpen: open-browser

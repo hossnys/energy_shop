@@ -12,6 +12,11 @@ ENV TZ=Europe/Amsterdam
 RUN apt-get install -y tzdata
 RUN apt-get upgrade -y
 
+ENV tftshop_wallet_secret="SCX2AQFNVESSTGTNMH5PHA76YRNTY7P6QYLYPOACONGMPGFNPRYK7CHV"
+ENV stellar_network="TEST"
+ENV network="testnet"
+ENV mpk="vpub5VDwtZH8SbRBPRV4c2LNrhDzyaLV7KB4udk55tfDfNkL5mjbEehZRCwte2ydSgVTsq1THG3yfGMTmKa3aNNxbdJ3S1ZwQAorfFRvR1neZr2"
+
 # install prerequisites
 RUN apt-get install -y git python3-venv python3-pip redis-server tmux nginx
 RUN sudo pip3 install poetry
@@ -34,3 +39,4 @@ RUN poetry install
 
 # Copy code
 COPY . /code/tftshop
+RUN ./entrypoint.sh
